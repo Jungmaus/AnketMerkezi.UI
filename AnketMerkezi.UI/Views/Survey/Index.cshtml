@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Anket Listesi";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+@model List<SurveyIndexVM>
+
+@if(TempData["OperationStatus"] != null && (EnumOperationStatus)TempData["OperationStatus"] == EnumOperationStatus.Success)
+{
+    <div class="alert alert-success">İşleminiz başarıyla gerçekleştirilmiştir.</div>
+}else if(TempData["OperationStatus"] != null && (EnumOperationStatus)TempData["OperationStatus"] == EnumOperationStatus.Failure)
+{
+    <div class="alert alert-danger">@(TempData["OperationStatusMessage"] != null ? (string)TempData["OperationStatusMessage"] : "İşleminiz gerçekleştirilirken bir sorun oluştu.")</div>
+}
+
+<table class="table table-bordered" style="margin-top:2%;">
+    <thead>
+        <tr>
+            <th>Anket Adı</th>
+            <th>Cevap Sayısı</th>
+            <th>Eklenme Tarihi</th>
+            <th>Aktiflik Durumu</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.AnswerCount</td>
+                <td>@item.AddDateText</td>
+                <td>@(item.IsActive ? "Aktif" : "Pasif")</td>
+                <td>
+                    <a href="@Url.Action("ChangeStatus","Survey",new { id = item.ID })"><span class="btn btn-@(item.IsActive ? "success" : "danger") load" title="Aktiflik durumunu değiştir"><i class="fa fa-retweet"></i></span></a>
+                    <a href="@Url.Action("Edit","Survey",new { link = item.Link })"><span class="btn btn-warning load"><i class="fa fa-pen"></i></span></a>
+                    <button class="btn btn-dark load"><i class="fa fa-search"></i></button>
+                    <button class="btn btn-info load"><i class="fa fa-share-alt"></i></button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script type="text/javascript">
+    if ("@(TempData["OperationStatus"] != null ? "True": "False")"== "True") {
+        setTimeout(() => {
+            $(".alert").hide(500);
+        }, 2000);
+    }
+</script>

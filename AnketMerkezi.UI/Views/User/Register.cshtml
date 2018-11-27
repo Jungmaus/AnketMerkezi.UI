@@ -1,0 +1,91 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Anket Merkezi | Kayıt Ol</title>
+    <link href="~/HomeDesign/vendor/sweetalert/sweetalert.css" rel="stylesheet" />
+    <link href="~/HomeDesign/Register/register.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- multistep form -->
+    <form id="msform">
+        @Html.AntiForgeryToken()
+        <!-- progressbar -->
+        <ul id="progressbar">
+            <li class="active">GİRİŞ BİLGİLERİ</li>
+            <li>KİŞİSEL BİLGİLER</li>
+            <li>ÜYELİK TİPİ</li>
+        </ul>
+        <!-- fieldsets -->
+        <fieldset>
+            <h2 class="fs-title">Gİrİş Bİlgİlerİ</h2>
+            <h3 class="fs-subtitle">Birinci adım</h3>
+            <input type="text" id="txtUsername" placeholder="Kullanıcı Adı (min.6)" maxlength="25" />
+            <input type="password" id="txtPassword" placeholder="Şifre (min.6)" maxlength="25" />
+            <input type="password" id="txtPasswordd" placeholder="Tekrar Şifreniz (min.6)" maxlength="25" />
+            <div id="firstFormMsgArea">
+
+            </div>
+            <input type="button" name="next" class="next action-button" value="Giriş Yap" onclick="window.location='@Url.Action("Login","User")'" />
+            <input type="button" id="btnContinue1" name="next" class="next action-button" value="Devam et" />
+        </fieldset>
+        <fieldset>
+            <h2 class="fs-title">Kİşİsel Bİlgİler</h2>
+            <h3 class="fs-subtitle">İkinci adım</h3>
+            <input type="email" id="txtEmail" placeholder="E-mail adresi" maxlength="50" />
+            <input type="text" id="txtName" placeholder="Ad" maxlength="20" />
+            <input type="text" id="txtSurname" placeholder="Soyad" maxlength="20" />
+            <input type="text" id="txtPhoneNumber" placeholder="Telefon Numarası" maxlength="15" />
+            <div id="secondFormMsgArea">
+
+            </div>
+            <input type="button" name="previous" class="previous action-button" value="Geri Dön" />
+            <input type="button" name="next" id="btnContinue2" class="next action-button" value="Devam et" />
+        </fieldset>
+        <fieldset style="position:fixed;">
+            <div style="text-align:center"><label>Üyelik Tipi Seçiniz</label></div>
+            <div style="display:flex;">
+                <div style="border:1px black groove;height:300px;width:80%;" class="accountTypeDiv">
+                    <div style="text-align:center;">Normal</div>
+                    <br />
+                    <input type="radio" name="accountType" value="0" />
+                </div>
+                <div style="border:1px black groove;height:300px;width:80%;" class="accountTypeDiv">
+                    <div style="text-align:center;">Gümüş</div>
+                    <br />
+                    <input type="radio" name="accountType" value="1" />
+                </div>
+                <div style="border:1px black groove;height:300px;width:80%;" class="accountTypeDiv">
+                    <div style="text-align:center;">Altın</div>
+                    <br />
+                    <input type="radio" name="accountType" value="2" />
+                </div>
+            </div>
+            <input type="button" name="previous" class="previous action-button" value="Geri Dön" />
+            <input type="submit" name="submit" id="btnSubmit" class="submit action-button" value="Kayıt Ol" />
+        </fieldset>
+    </form>
+
+    <script src="~/HomeDesign/vendor/jquery/jquery.min.js"></script>
+    <script src="~/HomeDesign/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/HomeDesign/vendor/jquery-input-mask/jquery-input-mask.js"></script>
+    <script src="~/HomeDesign/vendor/sweetalert/sweetalert.js"></script>
+    <script src="~/HomeDesign/Register/register.js"></script>
+    <script type="text/javascript">
+        const goSignInPage = () => {
+            window.location = "@Url.Action("Login","User")";
+        }
+
+        $(document).ready(() => {
+            $("#txtPhoneNumber").inputmask({ "mask": "(999) 999-9999" });
+        });
+    </script>
+</body>
+</html>

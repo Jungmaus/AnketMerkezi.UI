@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model LoginVM
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Anket Merkezi | Giriş Yap</title>
+    <link href="~/HomeDesign/Register/register.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    <form id="msform" method="post" action="@Url.Action("Login","User")">
+        @Html.AntiForgeryToken()
+
+        <fieldset>
+            <h2 class="fs-title">Kullanıcı Gİrİşİ</h2>
+            <h3 class="fs-subtitle">Hesap bilgilerinizi girerek panele giriş yapabilirsiniz.</h3>
+            @Html.TextBoxFor(x => x.Username, new { placeholder = "Kullanıcı Adı", maxlength = "25",required="required" })
+            @Html.PasswordFor(x => x.Password, new { placeholder = "Şifre", maxlength = "25", required = "required" })
+            <div id="firstFormMsgArea">
+              <label style="color:red;">@ViewBag.msg</label>
+            </div>
+            <input type="button" name="next" class="next action-button" value="Kayıt Ol" onclick="window.location='@Url.Action("Register","User")'" />
+            <input type="submit" name="next" class="next action-button" value="Giriş Yap" />
+        </fieldset>
+    </form>
+
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Anket Merkezi - Panel | @ViewBag.Title</title>
+
+    <link href="~/PanelDesign/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/PanelDesign/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="~/PanelDesign/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="~/PanelDesign/css/sb-admin.css" rel="stylesheet">
+    <link href="~/PanelDesign/vendor/fakeLoader/fakeloader.css" rel="stylesheet" />
+
+</head>
+<body id="page-top">
+
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+        <a class="navbar-brand mr-1" href="index.html">Anket Merkezi</a>
+        <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+            <i class="fas fa-bars"></i>
+        </button>
+        <!-- Navbar Search -->
+        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0"></form>
+        <!-- Navbar -->
+        <ul class="navbar-nav ml-auto ml-md-0">
+
+            <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user-circle fa-fw"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="@Url.Action("Settings","Panel")">Ayarlar</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="@Url.Action("Logout","User")">Çıkış Yap</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="sidebar navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="@Url.Action("Index","Panel")">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Genel Durum</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-fw fa-poll"></i>
+                    <span>Anket İşlemleri</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                    <a class="dropdown-item" href="@Url.Action("Index","Survey")"><i class="fa fa-list-ul"></i> Anket Listesi</a>
+                    <a class="dropdown-item" href="@Url.Action("Add","Survey")"><i class="fa fa-plus"></i> Anket Ekle</a>
+                    <a class="dropdown-item" href="@Url.Action("Share","Survey")"><i class="fa fa-share-alt"></i> Anket Paylaş</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-fw fa-headset"></i>
+                    <span>Destek Talep</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                    <a class="dropdown-item" href="@Url.Action("Index","SupportRequest")"><i class="fa fa-list-ul"></i> Destek Talep Listesi</a>
+                    <a class="dropdown-item" href="@Url.Action("Add","SupportRequest")"><i class="fa fa-plus"></i> Destek Talebi Ekle</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("UsageQuota","Panel")">
+                    <i class="fas fa-fw fa-spinner"></i>
+                    <span>Kullanım Kotası</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("UpgradeAccount","Panel")">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Hesap Yükselt</span>
+                </a>
+            </li>
+        </ul>
+        <div id="content-wrapper">
+            <div class="container-fluid">
+
+                @RenderBody()
+
+
+            </div>
+            <!-- /.container-fluid -->
+            <!-- Sticky Footer -->
+            <footer class="sticky-footer">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Tüm hakları saklıdır © Anket Merkezi 2018</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- /.content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+
+    <script src="~/PanelDesign/vendor/jquery/jquery.min.js"></script>
+    <script src="~/PanelDesign/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/PanelDesign/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/PanelDesign/vendor/chart.js/Chart.min.js"></script>
+    <script src="~/PanelDesign/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="~/PanelDesign/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="~/PanelDesign/js/sb-admin.min.js"></script>
+    <script src="~/PanelDesign/js/demo/datatables-demo.js"></script>
+    <script src="~/PanelDesign/js/demo/chart-area-demo.js"></script>
+    <script src="~/PanelDesign/vendor/fakeLoader/fakeloader.min.js"></script>
+    <script type="text/javascript">
+        $(".load").click(() => {
+            window.FakeLoader.init({ auto_hide: false });
+        });
+    </script>
+
+</body>
+</html>

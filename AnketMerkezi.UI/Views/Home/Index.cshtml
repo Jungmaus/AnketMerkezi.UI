@@ -1,0 +1,131 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Anket Merkezi | Ana Sayfa</title>
+
+    <link href="~/HomeDesign/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/HomeDesign/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="~/HomeDesign/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="~/HomeDesign/css/creative.min.css" rel="stylesheet">
+
+</head>
+<body id="page-top">
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">Anket Merkezi</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#hakkimizda">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#ucretlendirme">Neden Bİz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="@Url.Action("Register","User")">Kayıt Ol</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="@Url.Action("Login","User")">Gİrİş Yap</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead text-center text-white d-flex">
+        <div class="container my-auto">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h1 class="text-uppercase">
+                        <strong>Anketİnİ hemen oluştur ve paylaşmaya başla!</strong>
+                    </h1>
+                    <hr>
+                </div>
+                <div class="col-lg-8 mx-auto">
+                    <p class="text-faded mb-5">Anketini oluştur ve paylaş ardından anketinin sonuçlarını ve istatistiklerini incele. İşte bu kadar basit.</p>
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="#hakkimizda">Daha Fazla</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="bg-primary" id="hakkimizda">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading text-white">Sizin için işleri kolaylaştırdık!</h2>
+                    <hr class="light my-4">
+                    <p class="text-faded mb-4">Sadece bir kaç dakikada anketini hazırlayabilir, sistemimiz üzerinden kolaylıkla paylaşabilir ve anketinle alakalı tüm istatistiklere ulaşabilirsin. Senin için tam olarak bunu yapıyoruz.</p>
+                    <a class="btn btn-light btn-xl js-scroll-trigger" href="#kayitol">Hemen Başla</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="ucretlendirme">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Neden bizi seçmelisiniz ?</h2>
+                    <hr class="my-4">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box mt-5 mx-auto">
+                        <i class="fas fa-4x fa-gem text-primary mb-3 sr-icon-1"></i>
+                        <h3 class="mb-3">Hızlı sonuçlar</h3>
+                        <p class="text-muted mb-0">Sizler için olabilecek en kolay hizmeti sunuyoruz. Sadece bir kaç tıklama ile sonuca ulaşabilirsiniz.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box mt-5 mx-auto">
+                        <i class="fas fa-4x fa-paper-plane text-primary mb-3 sr-icon-2"></i>
+                        <h3 class="mb-3">Anket paylaşım kolaylığı</h3>
+                        <p class="text-muted mb-0">Oluşturduğunuz anketleri bizim mail sistemlerimiz üzerinden istediğiniz kişiye anket adresini yollayabilir, ya da tek tık ile sosyal medya hesaplarınızdan gönderi olarak paylaşabilirsiniz.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box mt-5 mx-auto">
+                        <i class="fas fa-4x fa-code text-primary mb-3 sr-icon-3"></i>
+                        <h3 class="mb-3">Kaliteli yazılım</h3>
+                        <p class="text-muted mb-0">Yazılımımız güncel teknolojiler ile geliştirilmiştir.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box mt-5 mx-auto">
+                        <i class="fas fa-4x fa-heart text-primary mb-3 sr-icon-4"></i>
+                        <h3 class="mb-3">Müşteri memnuniyeti</h3>
+                        <p class="text-muted mb-0">Müşteri memnuniyeti herşeyden önce gelir. Bizler için çok önemlisiniz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Bootstrap core JavaScript -->
+    <script src="/HomeDesign/vendor/jquery/jquery.min.js"></script>
+    <script src="/HomeDesign/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="/HomeDesign/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/HomeDesign/vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="/HomeDesign/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="/HomeDesign/js/creative.min.js"></script>
+
+
+</body>
+</html>
